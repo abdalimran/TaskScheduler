@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Task Scheduler</string>
+    <string name="time_picker_title">Time Picker</string>
+    <string name="date_picker_title">Date Picker</string>
+</resources>

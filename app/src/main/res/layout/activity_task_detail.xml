@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.github.imran.taskscheduler.activities.TaskDetailActivity">
+
+
+    <TextView
+        android:id="@+id/shw_tasktitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/shw_taskdetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Details"
+        android:textSize="15sp"
+        android:textColor="#000"
+        android:layout_margin="10dp"
+        android:layout_below="@id/shw_tasktitle"/>
+
+    <TextView
+        android:id="@+id/shw_taskdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textSize="15sp"
+        android:layout_margin="10dp"
+        android:textColor="#000"
+        android:layout_below="@id/shw_taskdetails"/>
+
+    <TextView
+        android:id="@+id/shw_tasktime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Time"
+        android:textSize="15sp"
+        android:textColor="#000"
+        android:layout_margin="10dp"
+        android:layout_below="@id/shw_taskdate"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_marginTop="50dp">
+
+        <ImageButton
+            android:id="@+id/btn_edit_task"
+            android:onClick="editTask"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/edit"
+            android:background="@null"
+            android:layout_marginRight="20dp"/>
+
+        <ImageButton
+            android:id="@+id/btn_edit_delete"
+            android:onClick="deleteTask"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/delete"
+            android:background="@null"
+            android:layout_marginLeft="20dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
