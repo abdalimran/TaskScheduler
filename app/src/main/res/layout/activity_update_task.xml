@@ -48,7 +48,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/calender"
-                android:background="#FFF"/>
+                android:background="@null"
+                android:backgroundTint="#FFF"/>
             <TextView
                 android:id="@+id/ushowDate"
                 android:layout_width="wrap_content"
@@ -71,7 +72,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/clock"
-                android:background="#FFF"/>
+                android:background="@null"
+                android:backgroundTint="#FFF"/>
 
             <TextView
                 android:id="@+id/ushowTime"
@@ -85,17 +87,15 @@
 
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/btn_addtask"
+    <ImageButton
+        android:id="@+id/btn_updatetask"
         android:onClick="updateTask"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Update"
-        android:textAllCaps="false"
-        android:textSize="15sp"
-        android:textColor="#fff"
-        android:background="@drawable/button_bg"
-        android:layout_below="@id/updt_time_date"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/done"
+        android:background="@null"
+        android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"/>
 
 </RelativeLayout>

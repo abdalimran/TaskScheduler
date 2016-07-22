@@ -12,17 +12,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:background="#87206b">
+        android:background="@drawable/card_bg">
 
         <TextView
             android:id="@+id/task_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Task Title: "
-            android:textColor="#FFF"
+            android:textColor="#000"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:layout_marginBottom="10dp"/>
+            android:gravity="center"/>
+
+        <View
+            android:id="@+id/solidline"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#FFE8E8E8"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@id/task_title"/>
 
 
         <TextView
@@ -30,9 +38,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Task Details: "
-            android:textColor="#FFF"
+            android:textColor="#000"
             android:textSize="15sp"
-            android:layout_below="@id/task_title"
+            android:layout_below="@id/solidline"
             android:layout_marginBottom="10dp"/>
 
         <RelativeLayout
@@ -48,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:text="Date: "
-                android:textColor="#FFF"
+                android:textColor="#000"
                 android:textSize="15sp"/>
 
             <TextView
@@ -57,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:text="Time: "
-                android:textColor="#FFF"
+                android:textColor="#000"
                 android:textSize="15sp"/>
 
         </RelativeLayout>
