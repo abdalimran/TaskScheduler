@@ -1,11 +1,9 @@
 package com.github.imran.taskscheduler.activities;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.github.imran.taskscheduler.R;
@@ -26,6 +24,7 @@ public class TaskDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_detail);
+        setTitle("Task Details");
         initViews();
     }
 

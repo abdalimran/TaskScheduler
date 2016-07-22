@@ -10,74 +10,91 @@
     tools:context="com.github.imran.taskscheduler.activities.TaskDetailActivity">
 
 
-    <TextView
-        android:id="@+id/shw_tasktitle"
+    <RelativeLayout
+        android:id="@+id/customlayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Title"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="#000"
-        android:layout_margin="10dp"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/card_bg">
 
-    <TextView
-        android:id="@+id/shw_taskdetails"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Details"
-        android:textSize="15sp"
-        android:textColor="#000"
-        android:layout_margin="10dp"
-        android:layout_below="@id/shw_tasktitle"/>
+        <TextView
+            android:id="@+id/shw_tasktitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_margin="10dp"
+            android:gravity="center"/>
 
-    <TextView
-        android:id="@+id/shw_taskdate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Date"
-        android:textSize="15sp"
-        android:layout_margin="10dp"
-        android:textColor="#000"
-        android:layout_below="@id/shw_taskdetails"/>
+        <View
+            android:id="@+id/solidline"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#FFE8E8E8"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@id/shw_tasktitle"/>
 
-    <TextView
-        android:id="@+id/shw_tasktime"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Time"
-        android:textSize="15sp"
-        android:textColor="#000"
-        android:layout_margin="10dp"
-        android:layout_below="@id/shw_taskdate"/>
+        <TextView
+            android:id="@+id/shw_taskdetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Details"
+            android:textSize="15sp"
+            android:textColor="#000"
+            android:layout_margin="10dp"
+            android:layout_below="@id/shw_tasktitle"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true"
-        android:gravity="center"
-        android:layout_marginTop="50dp">
+        <TextView
+            android:id="@+id/shw_taskdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:textSize="15sp"
+            android:layout_margin="10dp"
+            android:textColor="#000"
+            android:layout_below="@id/shw_taskdetails"/>
 
-        <ImageButton
-            android:id="@+id/btn_edit_task"
-            android:onClick="editTask"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/edit"
-            android:background="@null"
-            android:layout_marginRight="20dp"/>
+        <TextView
+            android:id="@+id/shw_tasktime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Time"
+            android:textSize="15sp"
+            android:textColor="#000"
+            android:layout_margin="10dp"
+            android:layout_below="@id/shw_taskdate"/>
 
-        <ImageButton
-            android:id="@+id/btn_edit_delete"
-            android:onClick="deleteTask"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/delete"
-            android:background="@null"
-            android:layout_marginLeft="20dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="50dp"
+            android:layout_alignParentBottom="true">
 
-    </LinearLayout>
+            <ImageButton
+                android:id="@+id/btn_edit_task"
+                android:onClick="editTask"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/edit"
+                android:background="@null"
+                android:layout_marginRight="20dp"/>
+
+            <ImageButton
+                android:id="@+id/btn_edit_delete"
+                android:onClick="deleteTask"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/delete"
+                android:background="@null"
+                android:layout_marginLeft="20dp"/>
+
+        </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>
