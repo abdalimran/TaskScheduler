@@ -44,8 +44,8 @@ public class TaskDetailActivity extends AppCompatActivity {
         TaskModel task=taskDBOperations.getTask(taskID);
         shwtaskTitle.setText(task.getTaskTitle());
         shwtaskDetails.setText(task.getTaskDetails());
-        shwtaskDate.setText(task.getTaskDate());
-        shwtaskTime.setText(task.getTaskTime());
+        shwtaskDate.setText("Date: "+task.getTaskDate());
+        shwtaskTime.setText("Time: "+task.getTaskTime());
     }
 
     public void editTask(View view) {

@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:text="Details"
             android:textSize="15sp"
-            android:textColor="#000"
+            android:textColor="#404040"
             android:layout_margin="10dp"
             android:layout_below="@id/shw_tasktitle"/>
 
