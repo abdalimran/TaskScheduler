@@ -35,6 +35,7 @@ public class AddTaskActivity extends AppCompatActivity implements DatePickerFrag
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_task);
         setTitle("Add New Task");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         taskDBOperations=new DBOperations(this);
 
@@ -45,9 +46,13 @@ public class AddTaskActivity extends AppCompatActivity implements DatePickerFrag
 
     }
 
+    private boolean isEmpty(EditText etText) {
+        return etText.getText().toString().trim().length() == 0;
+    }
+
     public void addTask(View view) {
 
-        if(taskTitle!=null && taskDetails!=null && tDate!=null && tTime!=null){
+        if(!isEmpty(taskTitle) && !isEmpty(taskDetails) && tDate!=null && tTime!=null){
             String tTitle = taskTitle.getText().toString();
             String tDetails = taskDetails.getText().toString();
 

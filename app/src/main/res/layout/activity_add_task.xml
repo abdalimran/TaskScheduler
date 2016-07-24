@@ -54,7 +54,8 @@
                 android:id="@+id/showDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Date"
+                android:text="Set Date"
+                android:textStyle="bold"
                 android:layout_margin="5dp"
                 android:layout_gravity="center"/>
         </LinearLayout>
@@ -79,7 +80,8 @@
                 android:id="@+id/showTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Time"
+                android:text="Set Time"
+                android:textStyle="bold"
                 android:layout_margin="5dp"
                 android:layout_gravity="center">
             </TextView>

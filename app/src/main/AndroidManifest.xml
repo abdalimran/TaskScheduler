@@ -17,15 +17,22 @@
 
         <activity
             android:name=".activities.AddTaskActivity"
-            android:parentActivityName=".activities.MainActivity" />
-
-        <activity
-            android:name=".activities.UpdateTaskActivity"
-            android:parentActivityName=".activities.TaskDetailActivity"/>
+            android:parentActivityName=".activities.MainActivity"
+            android:launchMode="singleInstance">
+        </activity>
 
         <activity
             android:name=".activities.TaskDetailActivity"
-            android:parentActivityName=".activities.MainActivity"/>
+            android:parentActivityName=".activities.MainActivity"
+            android:launchMode="singleInstance">
+        </activity>
+
+        <activity
+            android:name=".activities.UpdateTaskActivity"
+            android:parentActivityName=".activities.TaskDetailActivity"
+            android:launchMode="singleInstance">
+        </activity>
+
     </application>
 
 </manifest>

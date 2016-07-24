@@ -6,7 +6,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -88,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         initViews();
-        Log.d("TAG: "+this.getLocalClassName().toString(),"onStart");
     }
 
 }

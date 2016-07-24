@@ -1,9 +1,10 @@
 package com.github.imran.taskscheduler.activities;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -26,6 +27,7 @@ public class TaskDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_detail);
         setTitle("Task Details");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     private void initViews() {
@@ -50,20 +52,32 @@ public class TaskDetailActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), UpdateTaskActivity.class);
         intent.putExtra("id",taskID);
         startActivity(intent);
-        finish();
     }
 
     public void deleteTask(View view) {
-        taskDBOperations.deleteTask(taskID);
-        Intent intent = new Intent (this, MainActivity.class);
-        startActivity (intent);
-        finish();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Are you sure?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        taskDBOperations.deleteTask(taskID);
+                        Intent intent = new Intent (getApplicationContext(), MainActivity.class);
+                        startActivity (intent);
+                        finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         initViews();
-        Log.d("TAG: "+this.getLocalClassName().toString(),"onStart");
     }
 }

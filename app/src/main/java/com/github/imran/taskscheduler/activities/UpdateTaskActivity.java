@@ -28,6 +28,8 @@ public class UpdateTaskActivity extends AppCompatActivity implements DatePickerF
     private TextView ushowDate;
     private TextView ushowTime;
 
+    private String tTitle;
+    private String tDetails;
     private String tDate;
     private String tTime;
     private int taskID;
@@ -37,6 +39,7 @@ public class UpdateTaskActivity extends AppCompatActivity implements DatePickerF
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_task);
         setTitle("Update & Delete Task");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         taskDBOperations=new DBOperations(this);
 
@@ -49,10 +52,14 @@ public class UpdateTaskActivity extends AppCompatActivity implements DatePickerF
         taskID = tID.getInt("id");
 
         TaskModel task=taskDBOperations.getTask(taskID);
-        updttaskTitle.setText(task.getTaskTitle());
-        updttaskDetails.setText(task.getTaskDetails());
-        ushowDate.setText(task.getTaskDate());
-        ushowTime.setText(task.getTaskTime());
+        this.tTitle=task.getTaskTitle();
+        this.tDetails=task.getTaskDetails();
+        this.tDate=task.getTaskDate();
+        this.tTime=task.getTaskTime();
+        updttaskTitle.setText(tTitle);
+        updttaskDetails.setText(tDetails);
+        ushowDate.setText(tDate);
+        ushowTime.setText(tTime);
 
         System.out.println(updttaskTitle);
         System.out.println(updttaskDetails);
@@ -60,9 +67,17 @@ public class UpdateTaskActivity extends AppCompatActivity implements DatePickerF
         System.out.println(tTime);
     }
 
+    private boolean isEmpty(EditText etText) {
+        return etText.getText().toString().trim().length() == 0;
+    }
+
+    private boolean isEmpty(TextView tvText) {
+        return tvText.getText().toString().trim().length() == 0;
+    }
+
     public void updateTask(View view) {
 
-        if(updttaskTitle!=null && updttaskDetails!=null && tDate!=null && tTime!=null){
+        if(!isEmpty(updttaskTitle) && !isEmpty(updttaskDetails) && !isEmpty(ushowDate) && !isEmpty(ushowTime)){
             String utTitle = updttaskTitle.getText().toString();
             String utDetails = updttaskDetails.getText().toString();
 
