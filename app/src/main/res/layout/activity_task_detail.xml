@@ -7,6 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/main_layout_bg"
     tools:context="com.github.imran.taskscheduler.activities.TaskDetailActivity">
 
 
@@ -31,8 +32,8 @@
         <View
             android:id="@+id/solidline"
             android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="#FFE8E8E8"
+            android:layout_height="2dp"
+            android:background="#d4d4d4"
             android:layout_marginBottom="10dp"
             android:layout_below="@id/shw_tasktitle"/>
 
@@ -54,6 +55,7 @@
             android:textSize="15sp"
             android:layout_margin="10dp"
             android:textColor="#000"
+            android:textStyle="bold"
             android:layout_below="@id/shw_taskdetails"/>
 
         <TextView
@@ -64,6 +66,7 @@
             android:textSize="15sp"
             android:textColor="#000"
             android:layout_margin="10dp"
+            android:textStyle="bold"
             android:layout_below="@id/shw_taskdate"/>
 
         <LinearLayout
@@ -72,13 +75,14 @@
             android:orientation="horizontal"
             android:gravity="center"
             android:layout_marginTop="50dp"
+            android:layout_marginBottom="5dp"
             android:layout_alignParentBottom="true">
 
             <ImageButton
                 android:id="@+id/btn_edit_task"
                 android:onClick="editTask"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/edit"
                 android:background="@null"
@@ -87,8 +91,8 @@
             <ImageButton
                 android:id="@+id/btn_edit_delete"
                 android:onClick="deleteTask"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/delete"
                 android:background="@null"

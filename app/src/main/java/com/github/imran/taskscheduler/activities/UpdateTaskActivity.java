@@ -45,8 +45,6 @@ public class UpdateTaskActivity extends AppCompatActivity implements DatePickerF
         ushowDate= (TextView) findViewById(R.id.ushowDate);
         ushowTime= (TextView) findViewById(R.id.ushowTime);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         Bundle tID = getIntent().getExtras();
         taskID = tID.getInt("id");
 
@@ -107,4 +105,5 @@ public class UpdateTaskActivity extends AppCompatActivity implements DatePickerF
         DatePickerFragment dialog = new DatePickerFragment();
         dialog.show(getSupportFragmentManager(), DIALOG_DATE);
     }
+
 }

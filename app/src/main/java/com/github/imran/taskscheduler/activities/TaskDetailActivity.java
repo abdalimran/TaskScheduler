@@ -3,6 +3,7 @@ package com.github.imran.taskscheduler.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -25,7 +26,6 @@ public class TaskDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_detail);
         setTitle("Task Details");
-        initViews();
     }
 
     private void initViews() {
@@ -35,8 +35,6 @@ public class TaskDetailActivity extends AppCompatActivity {
         shwtaskDetails= (TextView) findViewById(R.id.shw_taskdetails);
         shwtaskDate= (TextView) findViewById(R.id.shw_taskdate);
         shwtaskTime= (TextView) findViewById(R.id.shw_tasktime);
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Bundle tID = getIntent().getExtras();
         taskID = tID.getInt("id");
@@ -52,19 +50,20 @@ public class TaskDetailActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), UpdateTaskActivity.class);
         intent.putExtra("id",taskID);
         startActivity(intent);
+        finish();
     }
 
     public void deleteTask(View view) {
         taskDBOperations.deleteTask(taskID);
-        finish();
         Intent intent = new Intent (this, MainActivity.class);
         startActivity (intent);
+        finish();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         initViews();
+        Log.d("TAG: "+this.getLocalClassName().toString(),"onStart");
     }
-
 }

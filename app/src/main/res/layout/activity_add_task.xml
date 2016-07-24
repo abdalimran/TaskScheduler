@@ -7,6 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/main_layout_bg"
     tools:context="com.github.imran.taskscheduler.activities.AddTaskActivity">
 
 
@@ -25,7 +26,7 @@
         android:hint="Enter task details"
         android:textSize="15sp"
         android:textColor="#000"
-        android:lines="10"
+        android:lines="5"
         android:gravity="start"
         android:layout_below="@id/edt_tasktitle"/>
 
@@ -89,8 +90,8 @@
     <ImageButton
         android:id="@+id/btn_addtask"
         android:onClick="addTask"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:scaleType="fitXY"
         android:src="@drawable/done"
         android:background="@null"

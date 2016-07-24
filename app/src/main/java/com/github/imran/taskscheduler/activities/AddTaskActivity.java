@@ -1,7 +1,7 @@
 package com.github.imran.taskscheduler.activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -43,7 +43,6 @@ public class AddTaskActivity extends AppCompatActivity implements DatePickerFrag
         showDate= (TextView) findViewById(R.id.showDate);
         showTime= (TextView) findViewById(R.id.showTime);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     public void addTask(View view) {
@@ -92,4 +91,5 @@ public class AddTaskActivity extends AppCompatActivity implements DatePickerFrag
         DatePickerFragment dialog = new DatePickerFragment();
         dialog.show(getSupportFragmentManager(), DIALOG_DATE);
     }
+
 }

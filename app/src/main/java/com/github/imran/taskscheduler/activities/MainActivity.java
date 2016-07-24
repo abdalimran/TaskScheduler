@@ -1,16 +1,15 @@
 package com.github.imran.taskscheduler.activities;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Toast;
 
 import com.github.imran.taskscheduler.R;
 import com.github.imran.taskscheduler.adapters.CardViewAdapter;
@@ -28,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initViews();
     }
 
     private void initViews(){
@@ -90,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         initViews();
-        Log.d("TAG","MainActivity in onStart");
+        Log.d("TAG: "+this.getLocalClassName().toString(),"onStart");
     }
+
 }
