@@ -39,7 +39,9 @@ public class UpdateTaskActivity extends AppCompatActivity implements DatePickerF
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_task);
         setTitle("Update & Delete Task");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if(getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         taskDBOperations=new DBOperations(this);
 
@@ -84,7 +86,7 @@ public class UpdateTaskActivity extends AppCompatActivity implements DatePickerF
             TaskModel task=new TaskModel(utTitle,utDetails,tDate,tTime);
 
             taskDBOperations.updateTask(taskID,task);
-            Toast.makeText(this,"Task updated sucessfully!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Task updated successfully!",Toast.LENGTH_SHORT).show();
             finish();
 
         }

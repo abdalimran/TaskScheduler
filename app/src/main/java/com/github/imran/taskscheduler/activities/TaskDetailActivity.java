@@ -7,6 +7,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.imran.taskscheduler.R;
 import com.github.imran.taskscheduler.database.DBOperations;
@@ -27,7 +28,9 @@ public class TaskDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_detail);
         setTitle("Task Details");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if(getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
     }
 
     private void initViews() {
@@ -63,6 +66,7 @@ public class TaskDetailActivity extends AppCompatActivity {
                         taskDBOperations.deleteTask(taskID);
                         Intent intent = new Intent (getApplicationContext(), MainActivity.class);
                         startActivity (intent);
+                        Toast.makeText(getApplicationContext(),"Task deleted successfully!",Toast.LENGTH_SHORT).show();
                         finish();
                     }
                 })
