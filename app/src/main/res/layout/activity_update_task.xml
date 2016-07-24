@@ -46,10 +46,11 @@
             android:gravity="left">
             <ImageButton
                 android:onClick="upickDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/calender"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="fitXY"
                 android:background="@null"
+                android:src="@drawable/calender"
                 android:backgroundTint="#FFF"/>
             <TextView
                 android:id="@+id/ushowDate"
@@ -71,10 +72,11 @@
 
             <ImageButton
                 android:onClick="upickTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/clock"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="fitXY"
                 android:background="@null"
+                android:src="@drawable/clock"
                 android:backgroundTint="#FFF"/>
 
             <TextView
