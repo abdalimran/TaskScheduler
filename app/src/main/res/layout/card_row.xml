@@ -38,6 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Task Details: "
+            android:singleLine="true"
             android:textColor="#3d3d3d"
             android:textSize="15sp"
             android:layout_below="@id/solidline"
